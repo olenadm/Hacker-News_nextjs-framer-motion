@@ -1,6 +1,29 @@
 import withTransition from "@/Hoc/withTransitions";
+import Link from "next/link";
+import RecentBox from "@/components/RecentBox";
+import { getAllDetails } from "./api/hello";
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [tops, setTops] = useState([]);
+  const [shows, setShows] = useState([]);
+
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      const top = await getAllDetails("top", 0, 5);
+      const show = await getAllDetails("show", 0, 5);
+
+      const job = await getAllDetails("job", 0, 5);
+
+      setTops((old) => top);
+      setShows((old) => show);
+      setJobs((old) => job);
+    }
+    fetchMyAPI();
+  }, []);
+
   return (
     <>
       <div className="row">
@@ -10,37 +33,13 @@ function Home() {
       </div>
       <div className="row">
         <div className="col-sm-4">
-          <div className="animated card">
-            <div className="card-body">
-              <h3 className="mb-4">Top Strories</h3>
-
-              <a href="#" className="more d-inline-block">
-                <span>More</span>
-              </a>
-            </div>
-          </div>
+          <RecentBox stories={tops} href="top" /*isLoading={topLoading}*/ />
         </div>
         <div className="col-sm-4">
-          <div className="card white-border">
-            <div className="card-body">
-              <h3 className="mb-4">Show Strories</h3>
-
-              <a href="#" className="more d-inline-block">
-                <span>More</span>
-              </a>
-            </div>
-          </div>
+          <RecentBox stories={shows} href="show" /*isLoading={topLoading}*/ />
         </div>
         <div className="col-sm-4">
-        <div className="animated card">
-            <div className="card-body">
-              <h3 className="mb-4">Job Strories</h3>
-
-              <a href="#" className="more d-inline-block">
-                <span>More</span>
-              </a>
-            </div>
-          </div>
+          <RecentBox stories={jobs} href="job" /*isLoading={topLoading}*/ />
         </div>
       </div>
     </>

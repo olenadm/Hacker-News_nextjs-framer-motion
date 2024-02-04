@@ -10,7 +10,7 @@ export default function Navbar() {
             Y
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse"
@@ -18,21 +18,21 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+            <ul className="navbar-nav ms-auto mb-2 mb-md-0">
+              <li className="nav-item">
                 <Link className="nav-link" href="/">
                   <Award size={16} /> Top Stories
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/show" className="nav-link">
                   <Coffee size={16} /> Show Stories
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/job" className="nav-link">
                   <Slack size={16} /> Job Stories
                 </Link>
