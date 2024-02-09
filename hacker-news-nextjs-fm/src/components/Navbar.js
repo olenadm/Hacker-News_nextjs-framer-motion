@@ -23,7 +23,7 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav ms-auto mb-2 mb-md-0">
               <li className="nav-item">
-                <Link className="nav-link" href="/">
+                <Link className="nav-link" href="/top">
                   <Award size={16} /> Top Stories
                 </Link>
               </li>

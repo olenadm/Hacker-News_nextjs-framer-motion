@@ -1,5 +1,4 @@
 import withTransition from "@/Hoc/withTransitions";
-import Link from "next/link";
 import RecentBox from "@/components/RecentBox";
 import { getAllDetails } from "./api/hello";
 import { useEffect, useState } from "react";
@@ -7,15 +6,15 @@ import { useEffect, useState } from "react";
 function Home() {
   const [tops, setTops] = useState([]);
   const [shows, setShows] = useState([]);
-
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     async function fetchMyAPI() {
       const top = await getAllDetails("top", 0, 5);
       const show = await getAllDetails("show", 0, 5);
-
       const job = await getAllDetails("job", 0, 5);
+
+      console.log(show)
 
       setTops((old) => top);
       setShows((old) => show);

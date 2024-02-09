@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const withTransition = (OriginalComponent:any) => {
+const withTransition = (OriginalComponent) => {
   return () => (
     <>
       <OriginalComponent />

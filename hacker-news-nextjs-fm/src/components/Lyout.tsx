@@ -4,11 +4,14 @@ import { Mulish } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Navbar from "./Navbar";
 import {  usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
 export default function Lyout(props: any) {
-    const path = usePathname().slice(1);
+    //const path = usePathname().slice(1);
+    const router = useRouter();
+    const type = router.query.type;
 
   return (
     <>
@@ -19,7 +22,7 @@ export default function Lyout(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${mulish.className}  py-5 ${path}`}>
+      <main className={`${mulish.className}  py-5 ${type}`}>
         <Navbar />
         <div className="container py-5">{props.children}</div>
       </main>

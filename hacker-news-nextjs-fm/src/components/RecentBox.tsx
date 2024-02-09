@@ -15,10 +15,11 @@ RecentBoxProps) {
         <h3 className="mb-4">{href.toUpperCase()} Strories</h3>
         <ul>
           {stories.slice(0, 5).map(({ id, title, url }) => (
-            <li>
-              <Link href={url}>
+           
+            <li key={id}>  
+              { url? <Link href={url}>
                 <h5 key={id}>{title}</h5>
-              </Link>
+              </Link> : title}
             </li>
           ))}
         </ul>

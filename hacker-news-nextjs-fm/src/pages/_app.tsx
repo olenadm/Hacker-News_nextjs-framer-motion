@@ -22,8 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
       onExitComplete={onExitComplete}
       initial={false} /*mode="popLayout"*/
     >
+      
       <Layout>
-        {" "}
         <Component {...pageProps} key={pageKey} />
       </Layout>
     </AnimatePresence>

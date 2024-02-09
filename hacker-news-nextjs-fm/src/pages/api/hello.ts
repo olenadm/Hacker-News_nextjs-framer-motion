@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Story } from './types';
 import { IItem } from "hacker-news-api-types";
 
 const BASE_API_URL = 'https://hacker-news.firebaseio.com/v0';
