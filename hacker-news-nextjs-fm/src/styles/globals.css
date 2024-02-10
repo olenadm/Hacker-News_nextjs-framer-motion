@@ -11,8 +11,7 @@
 html,
 body{
   padding: 0;
-  margin: 0;
-  
+  margin: 0;  
 }
 
 h1,
@@ -48,7 +47,7 @@ h1::selection {
 }
 
 a {
-  text-decoration: none;
+  color:#fff;
 }
 
 body {
@@ -175,7 +174,7 @@ main.job {
   h1 {
     -webkit-text-stroke: 2px #212529;
   }
-  h3, h5, ul {
+  h2, h3, h5, ul {
     color: var(--show);
   }
   background-color: var(--job);

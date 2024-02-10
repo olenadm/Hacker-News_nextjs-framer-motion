@@ -14,7 +14,7 @@ export default function Stories({ stories, page, limit, type }) {
                 <h5 key={id}>{title}</h5>
               </Link>
             ) : (
-                <h5 key={id}>{title}</h5>
+              <h5 key={id}>{title}</h5>
             )}
           </li>
         ))}
