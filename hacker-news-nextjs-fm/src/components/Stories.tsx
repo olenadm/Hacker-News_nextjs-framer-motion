@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Stories({ stories, page, limit, type }) {
   return (
     <>
-      <h1 className="mt-5 mb-5">{type} Strories</h1>
+      <h1 className="mb-4 mt-lg-5 mb-lg-5">{type} Strories</h1>
       <ul>
         {stories.map(({ id, title, url }) => (
           <li key={id}>

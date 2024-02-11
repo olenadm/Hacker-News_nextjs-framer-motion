@@ -9,7 +9,6 @@ import Link from "next/link";
 
 function Services() {
   const router = useRouter();
-  //const pn = usePathname().slice(1);
   const [story, setStory] = useState([]);
   const [type, setType] = useState("");
   const [loading, setLoading] = useState(true);
@@ -28,7 +27,7 @@ function Services() {
           setLoading(false);
           setError(false);
         } catch (error) {
-          setLoading(true);
+          setLoading(false);
           setError(true);
         }
       }
@@ -40,15 +39,16 @@ function Services() {
     <>
       {loading && <h2 className="my-5">Loading ... <ArrowRightCircle /></h2>}
       {error && <div><h2 className="my-5">Opps ... <Meh /> </h2><Link href="/">Let's go back...</Link></div>}
-      {(!loading || !error) && (
+      
+      {(!loading && !error) && (
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-lg-2 d-none d-lg-block">
             <Slack size={120} className="mt-5 App-logo" />
           </div>
-          <div className="col-sm-10 position-relative">
+          <div className="col-lg-10 position-relative">
             <Stories stories={story} type={type} page={0} limit={PER_PAGE} />
 
-            <a href="#" className="more d-inline-block">
+            <a href="#" className="more d-inline-block mt-3">
               <span>More</span>
             </a>
           </div>

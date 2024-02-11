@@ -27,17 +27,17 @@ function Home() {
     <>
       <div className="row">
         <div className="col-sm-12 position-relative">
-          <h1 className="mt-5 mb-5">Recent Stories</h1>
+          <h1 className="mb-4 mt-lg-5 mb-lg-5">Recent Stories</h1>
         </div>
       </div>
       <div className="row">
-        <div className="col-sm-4">
+        <div className="col-sm-4 mb-3">
           <RecentBox stories={tops} href="top" /*isLoading={topLoading}*/ />
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-4 mb-3">
           <RecentBox stories={shows} href="show" /*isLoading={topLoading}*/ />
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-4 mb-3">
           <RecentBox stories={jobs} href="job" /*isLoading={topLoading}*/ />
         </div>
       </div>
