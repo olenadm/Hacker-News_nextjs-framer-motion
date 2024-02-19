@@ -6,19 +6,20 @@ export default function Stories({ stories, page, limit, type }) {
   return (
     <>
       <h1 className="mb-4 mt-lg-5 mb-lg-5">{type} Strories</h1>
-      <ul>
+      <ol>
         {stories.map(({ id, title, url }) => (
           <li key={id}>
             {url ? (
               <Link href={url}>
-                <h5 key={id}>{title}</h5>
+                <h5 key={id}>{id} {title}</h5>
               </Link>
             ) : (
               <h5 key={id}>{title}</h5>
             )}
           </li>
         ))}
-      </ul>
+      </ol>
+      
     </>
   );
 }

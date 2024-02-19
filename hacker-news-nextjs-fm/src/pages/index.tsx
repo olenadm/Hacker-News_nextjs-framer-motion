@@ -8,17 +8,30 @@ function Home() {
   const [shows, setShows] = useState([]);
   const [jobs, setJobs] = useState([]);
 
+  const [topLoading, setTopLoading] = useState(true);
+  const [showsLoading, setShowsLoading] = useState(true);
+  const [jobsLoading, setJobsLoading] = useState(true);
+
   useEffect(() => {
     async function fetchMyAPI() {
-      const top = await getAllDetails("top", 0, 5);
-      const show = await getAllDetails("show", 0, 5);
-      const job = await getAllDetails("job", 0, 5);
+      const top = await getAllDetails("top", 1, 5);
+      const show = await getAllDetails("show", 1, 5);
+      const job = await getAllDetails("job", 1, 5);
 
-      console.log(show)
+      console.log(show);
 
-      setTops((old) => top);
-      setShows((old) => show);
-      setJobs((old) => job);
+      if (top.length > 0) {
+        setTops((old) => top);
+        setTopLoading(false);
+      }
+      if (show.length > 0) {
+        setShows((old) => show);
+        setShowsLoading(false);
+      }
+      if (job.length > 0) {
+        setJobs((old) => job);
+        setJobsLoading(false);
+      }
     }
     fetchMyAPI();
   }, []);
@@ -26,19 +39,19 @@ function Home() {
   return (
     <>
       <div className="row">
-        <div className="col-sm-12 position-relative">
+        <div className="col-sm-12">
           <h1 className="mb-4 mt-lg-5 mb-lg-5">Recent Stories</h1>
         </div>
       </div>
       <div className="row">
         <div className="col-sm-4 mb-3">
-          <RecentBox stories={tops} href="top" /*isLoading={topLoading}*/ />
+          <RecentBox stories={tops} href="top" isLoading={topLoading} />
         </div>
         <div className="col-sm-4 mb-3">
-          <RecentBox stories={shows} href="show" /*isLoading={topLoading}*/ />
+          <RecentBox stories={shows} href="show" isLoading={showsLoading} />
         </div>
         <div className="col-sm-4 mb-3">
-          <RecentBox stories={jobs} href="job" /*isLoading={topLoading}*/ />
+          <RecentBox stories={jobs} href="job" isLoading={jobsLoading} />
         </div>
       </div>
     </>

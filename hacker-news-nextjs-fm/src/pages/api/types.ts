@@ -11,4 +11,5 @@ export interface Stories {
 export interface RecentBoxProps {
   stories: IItem[];
   href: string;
+  isLoading: boolean;
 }

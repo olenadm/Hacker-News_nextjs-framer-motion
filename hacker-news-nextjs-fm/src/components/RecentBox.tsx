@@ -6,23 +6,29 @@ import { ArrowRight } from "react-feather";
 export default function RecentBox({
   stories,
   href,
-}: /* isLoading,*/
-
-RecentBoxProps) {
+  isLoading,
+}: RecentBoxProps) {
   return (
-    <div className={`${href !== "show" ? "animated" : "white-border"} card h-100`}>
+    <div
+      className={`${href !== "show" ? "animated" : "white-border"} card h-100`}
+    >
       <div className="card-body">
-        <h3 className="mb-4">{href.toUpperCase()} Strories</h3>
-        <ul>
-          {stories.slice(0, 5).map(({ id, title, url }) => (
-           
-            <li key={id}>  
-              { url? <Link href={url}>
-                <h5 key={id}>{title}</h5>
-              </Link> : title}
-            </li>
-          ))}
-        </ul>
+        <h3 className="mb-4">{href.toLowerCase()} Strories</h3>
+        {!isLoading ? (
+          <ul>
+            {stories.map(({ id, title, url }) => (
+              <li key={id}>
+                {url ? (
+                  <Link href={url}>
+                    <h5 key={id}>{title}</h5>
+                  </Link>
+                ) : (
+                  title
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : <p>Loading ...</p>}
 
         <Link href={href} className="more d-inline-block mt-3">
           <span>

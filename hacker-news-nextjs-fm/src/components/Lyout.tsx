@@ -5,13 +5,27 @@ import styles from "@/styles/Home.module.css";
 import Navbar from "./Navbar";
 import {  usePathname } from "next/navigation";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const mulish = Mulish({ subsets: ["latin"] });
 
 export default function Lyout(props: any) {
+  const [type, setType] = useState("o")
     //const path = usePathname().slice(1);
     const router = useRouter();
-    const type = router.query.type;
+    useEffect(()=> {
+      if (router.isReady) {
+        const typeQ = router.query.type;
+        if (typeQ) {
+          setType(old => typeQ.toString());
+        } else {
+          setType("");
+        }
+       
+      }
+    }, [router.isReady, router.query.type]);
+  
+    //const type = router.query.type;
 
   return (
     <>

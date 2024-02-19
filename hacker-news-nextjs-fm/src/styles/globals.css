@@ -12,6 +12,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  color:#fff;
 }
 #__next {
   height: 100%;
@@ -24,7 +25,7 @@ h4 {
   font-family: "Arvo", serif;
   color: #181a1c;
 }
-h1::first-letter {
+h1::first-letter, h3::first-letter {
   text-transform: uppercase;
 }
 h5 {
@@ -57,12 +58,13 @@ html,
 body {
   height: 100%;
 }
+
 .more {
-  padding: 10px 40px;
+  padding: 8px 33px;
   border: none;
   position: relative;
   background: transparent;
-  font-size: 16px;
+  font-size: 15px;
   color: var(--orange);
   transition: all 0.25s ease-in-out;
   cursor: pointer;
@@ -131,7 +133,7 @@ body {
 }
 
 main {
-  height: 100%;
+  
   width: 100%;
   background: var(--orange);
   background: linear-gradient(
@@ -155,7 +157,7 @@ main {
 
 main.show {
   background-color: var(--show);
-  background: linear-gradient(-45deg, var(--show), #000, #0a0a13, var(--show));
+  background: linear-gradient(-45deg, var(--show), #000, #131325, var(--show));
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
