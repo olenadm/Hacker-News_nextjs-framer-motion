@@ -14,7 +14,7 @@ function Services() {
   const [type, setType] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const PER_PAGE = 10;
+  const PER_PAGE = 8;
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const [totalStories, setTotalStories] = useState(null);
@@ -64,10 +64,8 @@ function Services() {
 
       {!loading && !error && (
         <div className="row">
-          <div className="col-lg-2 d-none d-lg-block">
-            <Slack size={120} className="mt-5 App-logo" />
-          </div>
-          <div className="col-lg-10 position-relative">
+          
+          <div className="col-lg-12 position-relative">
             <Stories stories={story} type={type} />
 
             <Pagination

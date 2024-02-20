@@ -46,7 +46,7 @@ ul {
 h1 {
   color: transparent;
   -webkit-text-stroke: 2px #fff;
-  font-size: 5.5rem;
+  font-size: 5rem;
   font-weight: 700;
 }
 
@@ -66,15 +66,19 @@ body {
   height: 100%;
 }
 
-.pagination {
-  position: fixed;
-  bottom: 35px;
-}
+
 
 .story {
   padding: 10px 10px;
   background: var(--orange);
   margin-bottom: 10px;
+
+  .score {
+    width: 10%;
+  }
+  .description{
+    width:90%;
+  }
 }
 
 .more {
@@ -366,6 +370,10 @@ body {
   }
 }
 @media (min-width: 768px) {
+  .pagination {
+    position: fixed;
+    bottom: 25px;
+  }
   .nav-item {
     span {
       display: inline-block;
