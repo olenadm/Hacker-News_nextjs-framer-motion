@@ -126,6 +126,35 @@ body {
       outline-color: transparent;
     }
   }
+
+  &:disabled {
+    transition: none;
+    cursor:none;
+    &:before {
+      background-color: antiquewhite;
+      transition: none;
+    }
+    &:after {
+      border:rgba(250, 235, 215, 0.5) 1px solid;
+    }
+
+    &:hover {
+      &:after{      
+        top: 3px;
+        left: 3px;
+      }
+
+      &:before,
+      &:after,
+      span {
+        top: -3px;
+        left: -3px;
+        outline-color: transparent;
+      } 
+      
+     
+    }
+  }
 }
 
 .navbar.bg-dark {
@@ -159,7 +188,6 @@ body {
     orangered,
     rgb(254, 165, 1),
     var(--orange)
-   
   );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -176,7 +204,14 @@ body {
 
 .show {
   background-color: var(--show);
-  background: linear-gradient(-45deg, var(--show), #000, #0d263e,#131325, var(--show));
+  background: linear-gradient(
+    -45deg,
+    var(--show),
+    #000,
+    #0d263e,
+    #131325,
+    var(--show)
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
@@ -193,7 +228,13 @@ body {
 }
 .job {
   color: var(--show);
-  background: linear-gradient(-45deg, var(--job), #FFD865, rgb(254, 170, 1), var(--job));
+  background: linear-gradient(
+    -45deg,
+    var(--job),
+    #ffd865,
+    rgb(254, 170, 1),
+    var(--job)
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
@@ -212,7 +253,6 @@ body {
   ul {
     color: var(--show);
   }
- 
 
   .navbar.bg-dark {
     background-color: var(--job) !important;
