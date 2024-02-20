@@ -6,6 +6,7 @@ import { getAllDetails, getdataLength } from "@/pages/api/hello";
 import Stories from "@/components/Stories";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Pagination from "@/components/Pagination";
 
 function Services() {
   const router = useRouter();
@@ -36,10 +37,6 @@ function Services() {
           setError(false);
           setTotalStories(totalStories);
           setTotalPages((old) => Math.ceil(totalStories / PER_PAGE));
-
-          console.log(
-            `Current page ${currentPage} total stories ${totalStories} total pages - ${totalPages}`
-          );
         } catch (error) {
           setLoading(false);
           setError(true);
@@ -71,32 +68,14 @@ function Services() {
             <Slack size={120} className="mt-5 App-logo" />
           </div>
           <div className="col-lg-10 position-relative">
-            <Stories stories={story} type={type} page={0} limit={PER_PAGE} />
+            <Stories stories={story} type={type} />
 
-            <div className="my-3">
-              <button
-                onClick={() =>
-                  handlePageChange(currentPage - 1)
-                }
-                disabled={currentPage === 1}
-                className="more d-inline-block mt-3 me-2"
-              >
-                <span>Previous</span>
-              </button>
-              <span>
-                Page {currentPage + 1} of {totalPages}
-              </span>
-
-              <button
-                onClick={() =>
-                  handlePageChange(currentPage + 1)
-                }
-                disabled={currentPage === totalPages-1}
-                className="more d-inline-block ms-2 mt-3"
-              >
-                <span>Next</span>
-              </button>
-            </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              previous={handlePageChange}
+              next={handlePageChange}
+            />
           </div>
         </div>
       )}

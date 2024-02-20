@@ -35,7 +35,7 @@ export async function getAllDetails(type: string, page: number, limit: number) {
 
 
   const promises: IItem[] = details.slice(page * limit, (page + 1) * limit).map(getIdDetails);
-  console.log(`All promises ${promises.length}`);
+
   return await Promise.all(promises);
 }
 

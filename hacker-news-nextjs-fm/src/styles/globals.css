@@ -132,8 +132,7 @@ body {
   }
 }
 
-main {
-  
+body {  
   width: 100%;
   background: var(--orange);
   background: linear-gradient(
@@ -155,7 +154,7 @@ main {
   }
 }
 
-main.show {
+.show {
   background-color: var(--show);
   background: linear-gradient(-45deg, var(--show), #000, #131325, var(--show));
   background-size: 400% 400%;
@@ -169,7 +168,7 @@ main.show {
     color: var(--show);
   }
 }
-main.job {
+.job {
   color: var(--show);
   a {
     &:link,
