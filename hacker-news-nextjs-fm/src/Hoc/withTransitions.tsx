@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
-const withTransition = (OriginalComponent) => {
+const withTransition = (OriginalComponent:any) => {
+ // eslint-disable-next-line react/display-name
   return () => (
     <>
       <OriginalComponent />

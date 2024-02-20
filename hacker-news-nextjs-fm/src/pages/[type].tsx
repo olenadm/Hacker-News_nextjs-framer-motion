@@ -44,7 +44,7 @@ function Services() {
       }
     }
     fetchMyAPI();
-  }, [router.isReady, currentPage, totalStories]);
+  }, [router.isReady, currentPage, totalStories, router.query.type]);
 
   return (
     <>
@@ -58,7 +58,7 @@ function Services() {
           <h2 className="my-5">
             Opps ... <Meh />{" "}
           </h2>
-          <Link href="/">Let's go back...</Link>
+          <Link href="/">Let&apos;s go back...</Link>
         </div>
       )}
 
