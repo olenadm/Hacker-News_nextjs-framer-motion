@@ -8,7 +8,7 @@ export default function Stories({ stories, type }) {
     <>
       <div className="row d-flex align-items-center">
         <div className="col-lg-2 d-none d-lg-block">
-          <Slack size={100} className="App-logo" />
+          <Slack size={90} className="App-logo" />
         </div>
         <div className="col-lg-10">
           {" "}
