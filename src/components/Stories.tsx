@@ -28,11 +28,11 @@ export default function Stories({ stories, type }) {
                       <Link href={url}>
                         <h5 key={id}> {title}</h5>
                       </Link>
-                      <span>
+                      <span className="small">
                         Published by {by}{" "}
                         {descendants
                           ? ` / ${descendants} comments`
-                          : "No comments yet"}
+                          : " / No comments yet"}
                       </span>
                     </>
                   ) : (
